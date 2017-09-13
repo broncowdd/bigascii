@@ -173,7 +173,7 @@ document.getElementById("button").addEventListener("click",function(event){
 	text=input.value;
 	text=text.toLowerCase();
 	selected_car=document.getElementById("car").value;
-	nb=document.getElementById("size").value;
+	nb=parseInt(document.getElementById("size").value);
 	encadrement=document.getElementById("comment").value;
 	end=document.getElementById("return").value;
 	space=document.getElementById("sep").value;
@@ -182,29 +182,32 @@ document.getElementById("button").addEventListener("click",function(event){
 	largeur=0;rendu="";
 
 	for (line=0;line<7;line++){
-		current_line="";		
+		current_line="";
 		for (car=0;car<text.length;car++){
 			stringcar=text.substr(car,1);
 			if (cars[stringcar]){
-				current_line+=space+cars[stringcar][line];
+				current_line+='.'+cars[stringcar][line];
 			}
 		}
-		largeur=current_line.length+3;
-		current_line=current_line.split('.').join(space.repeat(nb));
-		current_line=current_line.split('0').join(selected_car.repeat(nb));
-
 		
-		rendu+=encadrement+current_line+space+encadrement+end+"<br/>";
+		if (largeur==0){largeur=current_line.length;}
+		rendu+=encadrement+current_line+"."+encadrement+end+"<br/>";
 		
 	}
 	
 	if (encadrement.length){
-		rendu=	encadrement.repeat(largeur)+end+"<br/>"+
-				encadrement+space.repeat(largeur-2)+encadrement+end+"<br/>"+
+		console.log(largeur);
+		l=(largeur*nb)+2+nb;
+		
+		rendu=	encadrement.repeat(l)+end+"<br/>"+
+				encadrement+".".repeat(largeur+1)+encadrement+end+"<br/>"+
 				rendu+
-				encadrement+space.repeat(largeur-2)+encadrement+end+"<br/>"+
-				encadrement.repeat(largeur)+end+"<br/>";
+				encadrement+".".repeat(largeur+1)+encadrement+end+"<br/>"+
+				encadrement.repeat((largeur*nb)+2+nb)+end+"<br/>";
 	}
+	rendu=rendu.split('0').join(selected_car.repeat(nb));
+	rendu=rendu.split('.').join(space.repeat(nb))
+
 	output.innerHTML+=rendu+end+"<br/>";
 	return false;
 },false);
