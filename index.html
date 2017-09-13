@@ -1,0 +1,219 @@
+<html><head>
+	<title>BigAscii</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA
+B3RJTUUH4QkNBiUhTqFkIAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAABF
+SURBVCjPY/z//z8DKYCFgYGBkZGRoDq4uUwMJAIWXCahAYgr/v//T7INFDuJYADQ2NPk2DAINbDg
+kkALX/LTEiOpyRsA578VI7H6FnQAAAAASUVORK5CYII="/>
+	<style>
+	*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+	html{padding:0;}
+	body{font-family: monospace;padding:0;margin:0;}
+	h1{
+		padding:20px;
+		margin:0;
+		background:rgba(255,255,255,0.5);
+		color:rgba(0,0,0,0.7);
+		text-shadow: 0 1px 1px rgba(255,255,255,0.2);
+		box-shadow: 0 1px 2px #eee;
+	}
+	h2{
+		padding:10px;
+		margin:0;
+		color:#222;
+		text-shadow: 0 0 1px rgba(0,0,0,0.2);		
+	}
+	header{
+		background-color: #bbb;
+		padding:25px;
+		font-family: courier;
+	}
+	input,select{
+		padding:5px;
+		border-radius: 2px;
+		border:1px solid #999;
+	}
+	button{
+		padding:5px;
+		border-radius: 2px;
+		border:1px solid #039;
+		background-color: #08F;
+		cursor: pointer;
+		color:white;
+	}
+	button:hover{
+		border:1px solid #04a;
+		background-color: #19F;
+		cursor: pointer;
+	}
+	</style>
+		
+</head>
+<body>
+<header>
+	<pre>
+ ▒▒▒▒▒   ▒▒▒▒   ▒▒▒▒   ▒▒▒▒   ▒▒▒▒   ▒▒▒▒   ▒▒▒▒   ▒▒▒▒  
+ ▒▒  ▒▒   ▒▒   ▒▒  ▒▒ ▒▒  ▒▒ ▒▒  ▒▒ ▒▒  ▒▒   ▒▒     ▒▒   
+ ▒▒  ▒▒   ▒▒   ▒▒     ▒▒  ▒▒  ▒▒    ▒▒       ▒▒     ▒▒   
+ ▒▒▒▒▒    ▒▒   ▒▒ ▒▒▒ ▒▒▒▒▒▒   ▒▒   ▒▒       ▒▒     ▒▒   
+ ▒▒  ▒▒   ▒▒   ▒▒  ▒▒ ▒▒  ▒▒    ▒▒  ▒▒       ▒▒     ▒▒   
+ ▒▒  ▒▒   ▒▒   ▒▒  ▒▒ ▒▒  ▒▒ ▒▒  ▒▒ ▒▒  ▒▒   ▒▒     ▒▒   
+ ▒▒▒▒▒   ▒▒▒▒   ▒▒▒▒  ▒▒  ▒▒  ▒▒▒▒   ▒▒▒▒   ▒▒▒▒   ▒▒▒▒  
+</pre>
+	<input type="text" name="text" id="text" placeholder="alphanumérique uniquement">
+	<select id="car" title="caractère utilisé">
+		<option value="█">█</option>
+		<option value="▓">▓</option>
+		<option value="▒">▒</option>
+		<option value="░">░</option>
+		<option value="▚">▚</option>
+		<option value="◉">◉</option>
+		<option value="●">●</option>
+		<option value="◆">◆</option>
+		<option value="▪">▪</option>
+		<option value="∷">∷</option>
+		<option value="║">║</option>
+		<option value="╬">╬</option>
+		<option value="⬚">⬚</option>
+		<option value="◼">◼</option>
+		<option value="▩">▩</option>
+		<option value="▦">▦</option>
+		<option value="▤">▤</option>
+		<option value="▥">▥</option>
+		<option value="❚">❚</option>
+		<option value="⁑">⁑</option>
+		<option value="━">━</option>
+		<option value="─">─</option>
+		<option value="═">═</option>
+		
+	</select>
+	<select id="sep" title="separateur">
+		<option value=" "> </option>
+		<option value=".">.</option>
+		<option value="▫">▫</option>
+		<option value="◦">◦</option>
+		<option value="⬦">⬦</option>
+		<option value="-">-</option>
+		<option value="_">_</option>
+		<option value="+">+</option>
+		<option value="┄">┄</option>
+		<option value="┈">┈</option>
+		<option value="•">•</option>
+		<option value="…">…</option>
+	</select>
+	<select id="size" title="taille">
+		<option value="1">Normal</option>
+		<option value="2">double</option>
+		<option value="3">triple</option>
+	</select>
+
+	<select id="comment" title="commenter le texte">
+		<option value="">non commenté</option>
+		<option value="#">commenté #</option>
+	</select>
+
+	<select id="return" title="retour à la ligne">
+		<option value="" >&#8626;</option>
+		<option value="<br/>" >&lt;br/></option>
+	</select>
+
+	<button id="button">Asciize moi !</button>
+</header>
+
+<pre id="output"></pre>
+
+<script>
+cars={
+	"a" : ".0000. 00..00 00..00 000000 00..00 00..00 00..00".split(" "),
+	"b" : "00000. 00..00 00..00 00000. 00..00 00..00 00000.".split(" "),
+	"c" : ".0000. 00..00 00.... 00.... 00.... 00..00 .0000.".split(" "),
+	"d" : "00000. 00..00 00..00 00..00 00..00 00..00 00000.".split(" "),
+	"e" : "000000 00.... 00.... 00000. 00.... 00.... 000000".split(" "),
+	"f" : "000000 00.... 00.... 00000. 00.... 00.... 00....".split(" "),
+	"g" : ".0000. 00..00 00.... 00.000 00..00 00..00 .0000.".split(" "),
+	"h" : "00..00 00..00 00..00 000000 00..00 00..00 00..00".split(" "),
+	"i" : ".0000. ..00.. ..00.. ..00.. ..00.. ..00.. .0000.".split(" "),
+	"j" : "..0000 ...00. ...00. ...00. 00.00. 00.00. .000..".split(" "),
+	"k" : "00..00 00..00 00.00. 0000.. 00.00. 00..00 00..00".split(" "),
+	"l" : "0000.. .00... .00... .00... .00... .00.00 000000".split(" "),
+	"m" : "0.....0 00...00 000.000 0000000 00.0.00 00...00 00...00".split(" "),
+	"n" : "0...00 00..00 000.00 000000 00.000 00..00 00...0".split(" "),
+	"o" : ".0000. 00..00 00..00 00..00 00..00 00..00 .0000.".split(" "),
+	"p" : "00000. 00..00 00..00 00000. 00.... 00.... 00....".split(" "),
+	"q" : ".0000. 00..00 00..00 00..00 00.00. 00..00 .000.0".split(" "),
+	"r" : "00000. 00..00 00..00 00000. 00..00 00..00 00..00".split(" "),
+	"s" : ".0000. 00..00 .00... ..00.. ...00. 00..00 .0000.".split(" "),
+	"t" : "000000 0.00.0 ..00.. ..00.. ..00.. ..00.. .0000.".split(" "),
+	"u" : "00..00 00..00 00..00 00..00 00..00 00..00 .0000.".split(" "),
+	"v" : "00..00 00..00 00..00 00..00 00..00 .0000. ..00..".split(" "),
+	"w" : "00...00 00...00 00.0.00 0000000 000.000 00...00 0.....0".split(" "),
+	"x" : "00...00 00...00 .00.00. ..000.. .00.00. 00...00 00...00".split(" "),
+	"y" : "00..00 00..00 00..00 .0000. ..00.. ..00.. ..00.. ".split(" "),
+	"z" : "000000 00..00 ...00. ..00.. .00... 00..00 000000".split(" "),
+	" " : "...... ...... ...... ...... ...... ...... ......".split(" "),
+	"0" : ".0000. 00..00 000.00 00.000 00..00 00..00 .0000.".split(" "),
+	"1" : "...00. ..000. ...00. ...00. ...00. ...00. ..0000".split(" "),
+	"2" : ".0000. 00..00 ...00. ..00.. .00... 00..00 000000".split(" "),
+	"3" : ".0000. 00..00 ....00 ...00. ....00 00..00 .0000.".split(" "),
+	"4" : "....00. ...000. ..0000. .00.00. 00..00. 0000000 ....00.".split(" "),
+	"5" : "000000 00.... 00.... 00000. ....00 00..00 .0000.".split(" "),
+	"6" : ".0000. 00.... 00.... 00000. 00..00 00..00 .0000.".split(" "),
+	"7" : "000000 00..00 ...00. ..00.. ..00.. ..00.. ..00..".split(" "),
+	"8" : ".0000. 00..00 00..00 .0000. 00..00 00..00 .0000.".split(" "),
+	"9" : ".0000. 00..00 00..00 .00000 ....00 00..00 .0000.".split(" "),
+	"." : "...... ...... ...... ...... ...... ...... ..00..".split(" "),
+	"!" : "..00.. ..00.. ..00.. ..00.. ..00.. ...... ..00..".split(" "),
+	"-" : "...... ...... ...... 000000 ...... ...... ......".split(" "),
+	
+};
+input=document.getElementById("text");
+output=document.getElementById("output");
+document.getElementById("button").addEventListener("click",function(event){
+	text=input.value;
+	text=text.toLowerCase();
+	selected_car=document.getElementById("car").value;
+	nb=document.getElementById("size").value;
+	encadrement=document.getElementById("comment").value;
+	end=document.getElementById("return").value;
+	space=document.getElementById("sep").value;
+	if (end.length){end="&lt;br/>";}
+	if (space==" "){space="&nbsp;";}
+	largeur=0;rendu="";
+
+	for (line=0;line<7;line++){
+		current_line="";		
+		for (car=0;car<text.length;car++){
+			stringcar=text.substr(car,1);
+			if (cars[stringcar]){
+				current_line+=space+cars[stringcar][line];
+			}
+		}
+		largeur=current_line.length+3;
+		current_line=current_line.split('.').join(space.repeat(nb));
+		current_line=current_line.split('0').join(selected_car.repeat(nb));
+
+		
+		rendu+=encadrement+current_line+space+encadrement+end+"<br/>";
+		
+	}
+	
+	if (encadrement.length){
+		rendu=	encadrement.repeat(largeur)+end+"<br/>"+
+				encadrement+space.repeat(largeur-2)+encadrement+end+"<br/>"+
+				rendu+
+				encadrement+space.repeat(largeur-2)+encadrement+end+"<br/>"+
+				encadrement.repeat(largeur)+end+"<br/>";
+	}
+	output.innerHTML+=rendu+end+"<br/>";
+	return false;
+},false);
+
+
+
+
+
+
+</script>
+</body>
+</html>
