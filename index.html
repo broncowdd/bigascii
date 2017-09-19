@@ -195,8 +195,7 @@ document.getElementById("button").addEventListener("click",function(event){
 		
 	}
 	
-	if (encadrement.length){
-		console.log(largeur);
+	if (encadrement.length){		
 		l=(largeur*nb)+2+nb;
 		
 		rendu=	encadrement.repeat(l)+end+"<br/>"+
@@ -208,7 +207,7 @@ document.getElementById("button").addEventListener("click",function(event){
 	rendu=rendu.split('0').join(selected_car.repeat(nb));
 	rendu=rendu.split('.').join(space.repeat(nb))
 
-	output.innerHTML+=rendu+end+"<br/>";
+	output.innerHTML=rendu+end+"<br/>"+output.innerHTML;
 	return false;
 },false);
 
